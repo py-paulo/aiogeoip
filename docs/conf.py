@@ -31,6 +31,7 @@ with io.open(_version_path, 'r', encoding='latin1') as fp:
         raise RuntimeError('Unable to determine version.')
 
 # -- Project information -----------------------------------------------------
+master_doc = 'index'
 
 project = 'AioGeoIP'
 copyright = '2020, Paulo Roberto (py-paulo)'
