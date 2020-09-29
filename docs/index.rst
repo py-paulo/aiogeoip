@@ -47,6 +47,5 @@ Table Of Contents
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    aio_usage
