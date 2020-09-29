@@ -11,12 +11,13 @@
 <p align="center">
         <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/py-paulo/aiogeoip/Pylint?label=pylint&style=flat-square">
         <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/py-paulo/aiogeoip/Python%20package?label=py-package&style=flat-square">
+        <img alt="Read the Docs" src="https://img.shields.io/readthedocs/aiogeoip?style=flat-square">
         <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/py-paulo/aiogeoip?style=flat-square">
         <img alt="GitHub" src="https://img.shields.io/github/license/py-paulo/aiogeoip?style=flat-square">
 </p>
 
 <p align="center">
-  <a href="#">Docs</a> •
+  <a href="https://aiogeoip.readthedocs.io/en/latest/" target="_blank">Docs</a> •
   <a href="#">Pip</a> •
   <a href="#">Multiplataform</a> •
   <a href="#">CHANGELOG</a>

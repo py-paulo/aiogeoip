@@ -2,8 +2,8 @@ from .aio import AioGeoIP as AioGeoIP
 from .geoip import geoip
 from .cache import Cache
 
-from .geoip_urllib import (urllib_geoip as urllib_geoip)
-from .geoip_requests import (requests_geoip as requests_geoip)
+from .urllib_geoip import (geoip as urllib_geoip)
+from .requests_geoip import (geoip as requests_geoip)
 
 from .version import (
     __author__, __version__, author_info, package_info, package_license,
