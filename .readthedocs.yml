@@ -1,3 +1,5 @@
+sphinx:
+  configuration: docs/conf.py
 build:
     image: latest
   python:
