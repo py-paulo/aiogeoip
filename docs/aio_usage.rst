@@ -1,0 +1,7 @@
+.. currentmodule:: aiogeoip
+
+=========
+Aio Usage
+=========
+
+...
