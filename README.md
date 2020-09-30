@@ -9,6 +9,8 @@
 </p>
 
 <p align="center">
+        <img alt="PyPI" src="https://img.shields.io/pypi/v/aiogeoip?style=flat-square">
+        <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/aiogeoip?style=flat-square">
         <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/py-paulo/aiogeoip/Pylint?label=pylint&style=flat-square">
         <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/py-paulo/aiogeoip/Python%20package?label=py-package&style=flat-square">
         <img alt="Read the Docs" src="https://img.shields.io/readthedocs/aiogeoip?style=flat-square">
@@ -17,9 +19,9 @@
 </p>
 
 <p align="center">
-  <a href="https://aiogeoip.readthedocs.io/en/latest/" target="_blank">Docs</a> •
-  <a href="#">Pip</a> •
-  <a href="#">Multiplataform</a> •
+  <a href="https://aiogeoip.readthedocs.io/en/latest/" target="_blank">Docs</a> +
+  <a href="#">Pip</a> +
+  <a href="#">Multiplataform</a> +
   <a href="#">CHANGELOG</a>
 </p>
 
