@@ -41,6 +41,8 @@ async def geoip(ip: str):
     """
 
     uri = f'{uribase}{ip}{query}'
+
     geo = await get(uri)
     addr = create_obj_geolocation(geo)
+
     return addr
