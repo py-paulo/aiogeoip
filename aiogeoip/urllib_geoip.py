@@ -1,5 +1,6 @@
 import urllib.request
 import json
+import time
 import logging
 
 from aiogeoip.model import Geolocation
