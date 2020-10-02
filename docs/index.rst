@@ -16,6 +16,11 @@ Current version is |release|.
 Key Features
 ============
 
+.. caution:
+
+   using the free service of the `IP-API <https://ip-api.com/>`_ it is only possible to make 45 HTTP requests per minute from an IP address.
+
+
 - Support for asynchronous requests with `aiohttp <https://docs.aiohttp.org/en/stable/>`_.
 - Synchronous backend in ``urllib`` and ``requests``.
 - Synchronous backend in urllib and requests.
@@ -27,7 +32,7 @@ Library Installation
 
    $ pip install aiogeoip
 
-If in case you wanted to use the synchronous library with `` requests``, just install it:
+If in case you wanted to use the synchronous library with ``requests``, just install it:
 
 .. code-block:: bash
 

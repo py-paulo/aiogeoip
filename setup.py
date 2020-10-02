@@ -20,6 +20,8 @@ libraries = []
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+with open("CHANGES.md", "r") as fh:
+    changes = fh.read()
 
 # def read(f):
 #     return (HERE / f).read_text('utf-8').strip()
@@ -34,7 +36,7 @@ setuptools.setup(
     author_email=module.team_email,
     keywords=["aio", "python", "asyncio", "geoip", "io", "geolocation"],
     provides=["aiogeoip"],
-    long_description=long_description,
+    long_description=long_description+'\n\n'+changes,
     long_description_content_type='text/markdown',
     url="https://github.com/py-paulo/aiogeoip.git",
     classifiers=[
