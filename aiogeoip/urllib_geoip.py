@@ -9,7 +9,7 @@ guarantee the correct functioning of your software.
 >>> with urllib.request.urlopen(url_domains_example) as response:
 ...     body = response.read().decode('utf-8', errors='ignore')
 >>> lines = [line.lower() for line in body.split('\\n')]
->>> for line in lines[:10]:
+>>> for line in lines:
 ...     try:
 ...         ip = socket.gethostbyname(line)
 ...         geo = geoip(ip)
