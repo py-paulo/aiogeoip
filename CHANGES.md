@@ -4,8 +4,20 @@
 
 ### Features
 
-* In the backend with `urllib` a deal is made with number of attempts and maximum number of attempts so that if an error occurs, such as HTTP code 429, the request is redone.
+* If a request is not successful (*return code 200*) it will be
+tried again by ``N`` set by default to ``3`` in a time interval
+in seconds ``N`` by default ``2 ``.
+You can still call the ``geoip`` function only with a mandatory
+IPv4 argument, so it will have the default behavior of trying 3 times.
 
 ### Bugfixes
 
-* When an error in the request with `urllib` occurred an exception was thrown, now it is just notified with` logging.debug` and returned `None`.
+* All backends deal with the *connection error* and return code **429** error.
+
+### Improved Documentation
+
+* Creation of the page to document the synchronous functions.
+
+### Misc
+
+* Basic tests for ``geoip`` function on all backends
