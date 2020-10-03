@@ -35,8 +35,11 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --ignore=E265,F401 --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
         # doctest
+    - name: Doctest
+      run: |
         python -m doctest -v ./aiogeoip/urllib_geoip.py
         python -m doctest -v ./aiogeoip/requests_geoip.py
+        python -m doctest -v ./aiogeoip/geoip.py
     - name: Test with pytest
       run: |
         pytest

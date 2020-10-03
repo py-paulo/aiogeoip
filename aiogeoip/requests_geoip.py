@@ -38,6 +38,9 @@ def _get(uri: str, attempts: int, max_attempts: int, time_sleep: int) -> dict:
     Returns:
         dict: raw geolocation
     """
+    if attempts == max_attempts:
+        return None
+
     try:
         r = requests.get(uri)
 
@@ -47,10 +50,10 @@ def _get(uri: str, attempts: int, max_attempts: int, time_sleep: int) -> dict:
             logging.debug(('the user has sent many orders in a given '
                         'period of time. sleep two seconds.'))
         else:
-            logging.warning(f'abnormal response code "{r.status_code}"')
+            logging.warning(f'abnormal response code "{r.status_code}".')
     except requests.exceptions.ConnectionError:
         logging.debug(('the internet connection has been interrupted '
-                       'or the server is no longer available'))
+                       'or the server is no longer available.'))
 
     time.sleep(time_sleep)
 

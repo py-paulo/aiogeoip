@@ -53,7 +53,7 @@ def _get(uri: str, attempts: int, max_attempts: int, time_sleep: int) -> dict:
     except TimeoutError:
         logging.debug(('connection failed because the connected '
                        'component did not respond correctly after '
-                       'a period of time'))
+                       'a period of time.'))
     except Exception as err:
         logging.warning(f'not cataloged error: {err}')
     time.sleep(time_sleep)
