@@ -1,3 +1,5 @@
+# pylint: skip-file
+
 import setuptools
 from importlib.machinery import SourceFileLoader
 from os import path

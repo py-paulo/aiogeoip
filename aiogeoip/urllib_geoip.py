@@ -1,7 +1,20 @@
-"""
-The API limits the number of requests per minute, you must do the
+"""The API limits the number of requests per minute, you must do the
 control on your own. What we do is a basic task but does not
 guarantee the correct functioning of your software.
+
+>>> import urllib.request
+>>> import socket
+>>> url_domains_example = ('https://raw.githubusercontent.com/'
+...                        'py-paulo/aiogeoip/master/examples/domains.txt')
+>>> with urllib.request.urlopen(url_domains_example) as response:
+...     body = response.read().decode('utf-8', errors='ignore')
+>>> lines = [line.lower() for line in body.split('\\n')]
+>>> for line in lines[:10]:
+...     try:
+...         ip = socket.gethostbyname(line)
+...         geo = geoip(ip)
+...     except socket.gaierror:
+...         pass
 """
 import urllib.request
 import json
