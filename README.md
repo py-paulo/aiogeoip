@@ -20,9 +20,9 @@
 
 <p align="center">
   <a href="https://aiogeoip.readthedocs.io/en/latest/" target="_blank">Docs</a> +
-  <a href="#">Pip</a> +
+  <a href="https://pypi.org/project/aiogeoip/" target="_blank">Pip</a> +
   <a href="#">Multiplataform</a> +
-  <a href="#">CHANGELOG</a>
+  <a href="https://github.com/py-paulo/aiogeoip/blob/master/CHANGES.md">CHANGELOG</a>
 </p>
 
 ---
