@@ -78,6 +78,74 @@ requests geoip:
    print(geoip(ip))
 
 
+Response as dict:
+
+.. code-block:: python
+
+   { 'as': 'AS61592 FORT LINK INTERNET'
+         'CORPORATIVA BRASIL LTDA'
+         'EPP',
+    'city': 'Camaragibe',
+    'continent': 'South America',
+    'continentCode': 'SA',
+    'country': 'Brazil',
+    'countryCode': 'BR',
+    'district': '',
+    'hosting': False,
+    'isp': 'FORT LINK INTERNET '
+        'CORPORATIVA BRASIL LTDA EPP',
+    'lat': -7.9878,
+    'lon': -34.9914,
+    'org': 'FORT LINK INTERNET '
+        'CORPORATIVA BRASIL LTDA'
+        'EPP',
+    'query': '45.234.102.103',
+    'region': 'PE',
+    'regionName': 'Pernambuco',
+    'reverse': 'fort2-103.fortlink.net.br',
+    'status': 'success',
+    'timezone': 'America/Recife',
+    'zip': '54750'}
+
+Response object properties:
+
+.. code-block:: python
+
+   location
+
+   address
+
+   ip
+
+   continent
+
+   continent_code
+
+   country
+
+   country_code
+
+   region
+
+   region_name
+
+   city
+
+   district
+
+   zip
+
+   lat
+
+   lon
+
+   timezone
+
+   isp
+
+   reverse
+
+
 Source code
 ===========
 

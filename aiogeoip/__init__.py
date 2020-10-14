@@ -1,6 +1,7 @@
 from .aio import AioGeoIP as AioGeoIP
 from .geoip import geoip
 from .cache import Cache
+from .model import Geolocation
 
 from .urllib_geoip import (geoip as urllib_geoip)
 from .requests_geoip import (geoip as requests_geoip)
@@ -22,6 +23,7 @@ __all__ = (
     "version_info",
 
     "Cache",
+    "Geolocation",
 
     "AioGeoIP",
     "geoip",
