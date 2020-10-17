@@ -20,9 +20,12 @@ import urllib.request
 import json
 import time
 import logging
+import socket
+
+from typing import Tuple
 
 from aiogeoip.model import Geolocation
-from aiogeoip.geoip import uribase, query
+from aiogeoip.geoip import uribase, query, uri_get_public_ip
 from aiogeoip.utils import create_obj_geolocation
 
 
@@ -79,3 +82,33 @@ def geoip(ip: str, attempts=0, max_attempts=3, time_sleep=2) -> Geolocation or N
     addr = create_obj_geolocation(geo)
 
     return addr
+
+
+def whoami() -> Tuple[str or None]:
+    """Returns a Tuple with the public IPv4 address, private IPv4 and hostname.
+
+    >>> info = whoami()
+    >>> type(info[0])
+    <class 'str'>
+    >>> len(info)
+    3
+
+    Returns:
+        Tuple[str or None]: public ip, private ip and hostname
+    """
+    hostname = socket.gethostname()
+    private_ip = socket.gethostbyname(hostname)
+
+    req = urllib.request.Request(uri_get_public_ip)
+
+    try:
+        with urllib.request.urlopen(req) as response:
+            public_ip = response.read().decode('utf-8', errors='ignore')
+    except TimeoutError:
+        logging.debug(('connection failed because the connected '
+                       'component did not respond correctly after '
+                       'a period of time.'))
+    except Exception as err:
+        logging.warning(f'not cataloged error: {err}')
+
+    return public_ip, private_ip, hostname

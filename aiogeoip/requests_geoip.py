@@ -20,9 +20,12 @@ guarantee the correct functioning of your software.
 import requests
 import logging
 import time
+import socket
+
+from typing import Tuple
 
 from aiogeoip.model import Geolocation
-from aiogeoip.geoip import uribase, query
+from aiogeoip.geoip import uribase, query, uri_get_public_ip
 from aiogeoip.utils import create_obj_geolocation
 
 
@@ -78,3 +81,31 @@ def geoip(ip: str, attempts: int = 0, max_attempts: int = 3, time_sleep: int = 2
     addr = create_obj_geolocation(geo)
 
     return addr
+
+
+def whoami() -> Tuple[str or None]:
+    """Returns a Tuple with the public IPv4 address, private IPv4 and hostname.
+
+    >>> info = whoami()
+    >>> type(info[0])
+    <class 'str'>
+    >>> len(info)
+    3
+
+    Returns:
+        Tuple[str or None]: public ip, private ip and hostname
+    """
+    hostname = socket.gethostname()
+    private_ip = socket.gethostbyname(hostname)
+
+    public_ip = None
+    try:
+        req = requests.get(uri_get_public_ip)
+        public_ip = req.text()
+    except requests.exceptions.ConnectionError:
+        logging.debug(('the internet connection has been interrupted '
+                       'or the server is no longer available.'))
+    except Exception as err:
+        logging.warning(f'not cataloged error: {err}')
+
+    return public_ip, private_ip, hostname

@@ -4,8 +4,8 @@
 Geolocation Reference
 =====================
 
-Geolocation Response object
----------------------------
+Geolocation
+-----------
 
 Regardless of the backend you use the response structure will be the
 same, a ``Geolocation`` object that inherits attributes from a ``dict`` 
@@ -93,20 +93,20 @@ private and setters.
 
     .. attribute:: lon
 
-        It is the same as the "" field in the json response
+        It is the same as the "lon" field in the json response
 
     .. attribute:: timezone
 
-        It is the same as the "" field in the json response
+        It is the same as the "timezone" field in the json response
 
     .. attribute:: isp
 
-        It is the same as the "" field in the json response
+        It is the same as the "isp" field in the json response
 
     .. attribute:: org
 
-        It is the same as the "" field in the json response
+        It is the same as the "org" field in the json response
 
     .. attribute:: reverse    
 
-        It is the same as the "" field in the json response.
+        It is the same as the "reverse" field in the json response.

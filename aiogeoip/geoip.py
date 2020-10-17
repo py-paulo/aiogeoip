@@ -27,6 +27,7 @@ import logging
 
 from aiogeoip.utils import create_obj_geolocation
 
+uri_get_public_ip = 'http://meuip.com/api/meuip.php'
 uribase = 'http://ip-api.com/json/'
 query = '?fields=20512767'
 """
