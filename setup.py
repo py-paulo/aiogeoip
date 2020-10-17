@@ -38,8 +38,8 @@ setuptools.setup(
     author_email=module.team_email,
     keywords=["aio", "python", "asyncio", "geoip", "io", "geolocation"],
     provides=["aiogeoip"],
+    long_description_content_type="text/markdown",
     long_description=long_description+'\n\n'+changes,
-    long_description_content_type='text/markdown',
     url="https://github.com/py-paulo/aiogeoip.git",
     classifiers=[
         "Environment :: Console",

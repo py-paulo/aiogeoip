@@ -7,9 +7,11 @@
 Welcome to AioGeoIP
 ===================
 
-Real asynchronous geolocation by IP address with asyncio support.
+**AioGeoIP** is a library for geolocation by IPv4 address that uses the `IP-API <https://ip-api.com/>`_
+platform completely free of charge and provides support for parallelism with *asyncio* and synchronized
+methods with *Requests* and *urllib3*, in addition to additional features for optimizing your software.
 
-Current version is |release|.
+Current version is |release|
 
 .. _GitHub: https://github.com/py-paulo/aiogeoip
 
@@ -18,12 +20,13 @@ Key Features
 
 .. caution:
 
-   using the free service of the `IP-API <https://ip-api.com/>`_ it is only possible to make 45 HTTP requests per minute from an IP address.
+   using the free service of the `IP-API <https://ip-api.com/>`_ it is only
+   possible to make 45 HTTP requests per minute from an IP address.
 
 
 - Support for asynchronous requests with `aiohttp <https://docs.aiohttp.org/en/stable/>`_.
-- Synchronous backend in ``urllib`` and ``requests``.
-- Synchronous backend in urllib and requests.
+- Synchronous backend in `urllib <https://urllib3.readthedocs.io/en/latest/>`_ and `requests <https://requests.readthedocs.io/en/master/>`_.
+- Cached requests for greater optimization.
 
 Library Installation
 ====================
@@ -32,17 +35,10 @@ Library Installation
 
    $ pip install aiogeoip
 
-If in case you wanted to use the synchronous library with ``requests``, just install it:
-
-.. code-block:: bash
-
-   $ pip install requests
-
-
 Getting Started
 ====================
 
-Aio geoip:
+aiogeoip:
 
 .. code-block:: python
 
@@ -56,6 +52,21 @@ Aio geoip:
    
    aio = AioGeoIP()
    asyncio.get_event_loop().run_until_complete(main(aio))
+
+OR
+
+.. code-block:: python
+
+   import pprint
+   import socket
+   import asyncio
+   from aiogeoip import geoip
+
+   async def main():
+      ip = socket.gethostbyname('www.google.com')
+      pprint.pprint(await geoip(ip))
+
+   asyncio.get_event_loop().run_until_complete(main())
 
 urllib geoip:
 
@@ -107,44 +118,6 @@ Response as dict:
     'timezone': 'America/Recife',
     'zip': '54750'}
 
-Response object properties:
-
-.. code-block:: python
-
-   location
-
-   address
-
-   ip
-
-   continent
-
-   continent_code
-
-   country
-
-   country_code
-
-   region
-
-   region_name
-
-   city
-
-   district
-
-   zip
-
-   lat
-
-   lon
-
-   timezone
-
-   isp
-
-   reverse
-
 
 Source code
 ===========
@@ -154,6 +127,20 @@ The project is hosted on GitHub_
 Please feel free to file an issue on the `bug tracker
 <https://github.com/py-paulo/aiogeoip/issues>`_ if you have found a bug
 or have some suggestion in order to improve the library.
+
+
+Dependencies
+============
+
+- Python 3.6+
+- *aiohttp*
+- *requests*
+
+
+Contributing
+============
+
+Please read the `instructions for contributors <https://github.com/py-paulo/aiogeoip/blob/master/CONTRIBUTING.md>`_.
 
 
 Authors and License
@@ -175,4 +162,4 @@ Table Of Contents
 
    response
    aio_usage
-   sync_backend
+   sync_geoip

@@ -21,3 +21,9 @@ IPv4 argument, so it will have the default behavior of trying 3 times.
 ### Misc
 
 * Basic tests for ``geoip`` function on all backends
+
+## 0.0.3 (14-10-2020)
+
+### Bugfixes
+
+* **#2** ``ModuleNotFoundError: No module named 'ujson'``

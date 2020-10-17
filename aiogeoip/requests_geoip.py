@@ -60,7 +60,7 @@ def _get(uri: str, attempts: int, max_attempts: int, time_sleep: int) -> dict:
     return _get(uri, attempts + 1, max_attempts, time_sleep)    
 
 
-def geoip(ip: str, attempts=0, max_attempts=3, time_sleep=2) -> Geolocation or None:
+def geoip(ip: str, attempts: int = 0, max_attempts: int = 3, time_sleep: int = 2) -> Geolocation or None:
     """Geolocation object from an IP address
 
     Args:
