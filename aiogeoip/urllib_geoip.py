@@ -76,7 +76,7 @@ def geoip(ip: str, attempts=0, max_attempts=3, time_sleep=2) -> Geolocation or N
     Returns:
         Geolocation or None: obj geolocation
     """
-    uri = f'{uribase}{ip}{query}'
+    uri = '%s%s%s' % (uribase, ip, query)
 
     geo = _get(uri, attempts, max_attempts, time_sleep)
     addr = create_obj_geolocation(geo)
@@ -109,6 +109,6 @@ def whoami() -> Tuple[str or None]:
                        'component did not respond correctly after '
                        'a period of time.'))
     except Exception as err:
-        logging.warning(f'not cataloged error: {err}')
+        logging.warning('not cataloged error: %s' % err)
 
     return public_ip, private_ip, hostname

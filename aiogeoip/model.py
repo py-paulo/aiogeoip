@@ -23,11 +23,11 @@ class Geolocation(dict):
 
     @property
     def location(self):
-        return f'{self.lat}, {self.location}'
+        return '%s, %s' % (self.lat, self.location)
 
     @property
     def address(self):
-        return f'{self.continent}, {self.country}, {self.region_name}, {self.city}'
+        return '%s, %s, %s, %s' % (self.continent, self.country, self.region_name, self.city)
 
     @property
     def ip(self):

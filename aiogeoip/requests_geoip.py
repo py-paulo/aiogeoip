@@ -51,16 +51,16 @@ def _get(uri: str, attempts: int, max_attempts: int, time_sleep: int) -> dict:
             return r.json()
         elif r.status_code == 429:
             logging.debug(('the user has sent many orders in a given '
-                        'period of time. sleep two seconds.'))
+                           'period of time. sleep two seconds.'))
         else:
-            logging.warning(f'abnormal response code "{r.status_code}".')
+            logging.warning('abnormal response code "%s".' % r.status_code)
     except requests.exceptions.ConnectionError:
         logging.debug(('the internet connection has been interrupted '
                        'or the server is no longer available.'))
 
     time.sleep(time_sleep)
 
-    return _get(uri, attempts + 1, max_attempts, time_sleep)    
+    return _get(uri, attempts + 1, max_attempts, time_sleep)
 
 
 def geoip(ip: str, attempts: int = 0, max_attempts: int = 3, time_sleep: int = 2) -> Geolocation or None:
@@ -101,11 +101,11 @@ def whoami() -> Tuple[str or None]:
     public_ip = None
     try:
         req = requests.get(uri_get_public_ip)
-        public_ip = req.text()
+        public_ip = req.text
     except requests.exceptions.ConnectionError:
         logging.debug(('the internet connection has been interrupted '
                        'or the server is no longer available.'))
     except Exception as err:
-        logging.warning(f'not cataloged error: {err}')
+        logging.warning('not cataloged error: %s' % err)
 
     return public_ip, private_ip, hostname

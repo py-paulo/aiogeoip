@@ -27,3 +27,17 @@ IPv4 argument, so it will have the default behavior of trying 3 times.
 ### Bugfixes
 
 * **#2** ``ModuleNotFoundError: No module named 'ujson'``
+
+## 0.0.4 (17-10-2020)
+
+### Features
+
+* [#3](https://github.com/py-paulo/aiogeoip/issues/3) function that returns the external IP address, private IP and hostname.
+
+### Misc
+
+* [#4](https://github.com/py-paulo/aiogeoip/issues/3) Support to python3.4+
+
+### Improved Documentation
+
+Function ``geoip`` in aio, requests and urllib background. Improved documentation for the Geolocation class.

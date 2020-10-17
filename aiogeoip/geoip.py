@@ -62,12 +62,12 @@ async def get(uri, attempts: int, max_attempts: int, time_sleep: int) -> dict:
                     return await resp.json()
                 elif resp.status == 429:
                     logging.debug(('the user has sent many orders in a given '
-                            'period of time. sleep two seconds.'))
+                                   'period of time. sleep two seconds.'))
                 else:
-                    logging.warning(f'abnormal response code "{resp.status}".')
+                    logging.warning('abnormal response code "%s".' % resp.status)
         except aiohttp.client_exceptions.ClientOSError:
             logging.debug(('the internet connection has been interrupted '
-                        'or the server is no longer available.'))
+                           'or the server is no longer available.'))
         await asyncio.sleep(time_sleep)
 
         return await get(uri, attempts + 1, max_attempts, time_sleep)
@@ -84,7 +84,7 @@ async def geoip(ip: str, attempts=0, max_attempts=3, time_sleep=2):
 
     Returns:
         Geolocation or None: obj geolocation
-    
+
     Example response IP-API:
 
     { 'as': 'AS61592 FORT LINK INTERNET'
@@ -113,7 +113,7 @@ async def geoip(ip: str, attempts=0, max_attempts=3, time_sleep=2):
     'zip': '54750'}
     """
 
-    uri = f'{uribase}{ip}{query}'
+    uri = '%s%s%s' % (uribase, ip, query)
 
     geo = await get(uri, attempts, max_attempts, time_sleep)
     addr = create_obj_geolocation(geo)
