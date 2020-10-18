@@ -146,7 +146,7 @@ Please read the `instructions for contributors <https://github.com/py-paulo/aiog
 Authors and License
 ===================
 
-The ``aiohttp`` package is written mostly by Nikolay Kim and Andrew Svetlov.
+The ``aiogeoip`` package is written mostly by Paulo Júnior.
 
 It's *Apache 2* licensed and freely available.
 
