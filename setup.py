@@ -57,5 +57,5 @@ setuptools.setup(
         'Read the Docs': 'https://aiogeoip.readthedocs.io/en/latest/',
     },
     python_requires='>=3.6',
-    install_requires=["aiohttp~=3.6.0", "requests~=2.24.0", "ujson"],
+    install_requires=["aiohttp", "requests", "ujson", "urllib3"],
 )
