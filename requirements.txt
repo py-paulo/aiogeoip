@@ -1,0 +1,4 @@
+aiohttp
+requests
+ujson
+urllib3
